@@ -85,7 +85,20 @@
 
     <script>
         document.querySelector("img").onclick = function () {
-            document.querySelector("img").src = "https://www.epicgames.com/help/en-US/c-Category_EpicGamesStore/c-EpicGamesStore_LauncherSupport/attachments/015QP000000EXKc";
+            const img = document.querySelector("img");
+            img.src = "https://www.epicgames.com/help/en-US/c-Category_EpicGamesStore/c-EpicGamesStore_LauncherSupport/attachments/015QP000000EXKc";
+            img.style.borderImage = "none";
+            img.style.animation = "none";
+
+            const body = document.querySelector("body");
+            body.style.backgroundImage = `url('https://i.pinimg.com/736x/7f/d2/b4/7fd2b4e57b969a957f08ce2bc60e41bf.jpg')`;
+
+            const h1 = document.querySelector("h1");
+            h1.textContent = "😥 !!! NÅGOT GICK FEL !!! 😥"
+            h1.style.fontSize = "5vw"
+
+            const h2 = document.querySelector("h2");
+            h2.style.display = "none";
         };    
     </script>
 </body>
