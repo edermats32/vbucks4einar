@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V-BUCKS FOR EINAR</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background: url("https://media0.giphy.com/media/GmWeN9bM2VCIlxoIfw/200w.gif?cid=6c09b952wxvdhi8g9uf56ripopvibik0leq5dwnw3j79jc4i&ep=v1_gifs_search&rid=200w.gif&ct=g");
+            background-size: 100% 100%;
+        }
+
+        div {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1vw;
+            border-radius: 1vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffcc4d;
+            margin: 2vw;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 6vw;
+            text-shadow: 0.3vw 0.3vw #5d9040;
+        }
+
+        h2{
+            font-size: 2vw;
+            text-shadow: 0.1vw 0.1vw #5d9040;
+        }
+
+        img {
+            width: 20vw;
+            border: solid 1em;
+            border-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red) 1;
+            animation: rainbow 0.1s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                border-image-slice: 1;
+            }
+
+            100% {
+                border-image-slice: 100;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <main>
-        <h1>PLACEHOLDER EINAR</h1>
+        <div>
+            <h1>🤑 !!! FREE V-BUCKS !!! 🤑<br>GRATTIS EINAR</h1>
+            <h2>⤥ KLICKA PÅ BILDEN ⤦</h2>
+        </div>
+        <img src="./media/einar.jpg" alt="">
     </main>
 </body>
+
 </html>
