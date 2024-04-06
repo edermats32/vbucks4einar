@@ -62,6 +62,10 @@
             animation: rainbow 0.1s linear infinite;
         }
 
+        #error:active {
+            mix-blend-mode: exclusion;
+        }
+
         @keyframes rainbow {
             0% {
                 border-image-slice: 1;
@@ -85,10 +89,13 @@
 
     <script>
         document.querySelector("img").onclick = function () {
+            const div = document.querySelector("div")
+
             const img = document.querySelector("img");
             img.src = "https://www.epicgames.com/help/en-US/c-Category_EpicGamesStore/c-EpicGamesStore_LauncherSupport/attachments/015QP000000EXKc";
             img.style.borderImage = "none";
             img.style.animation = "none";
+            img.id = "error";
 
             const body = document.querySelector("body");
             body.style.backgroundImage = `url('https://i.pinimg.com/736x/7f/d2/b4/7fd2b4e57b969a957f08ce2bc60e41bf.jpg')`;
@@ -97,8 +104,29 @@
             h1.textContent = "😥 !!! NÅGOT GICK FEL !!! 😥"
             h1.style.fontSize = "5vw"
 
+            let count = 11;
             const h2 = document.querySelector("h2");
-            h2.style.display = "none";
+            h2.textContent = `⤥ KLICKA PÅ FELET ${count} GÅNGER ⤦`
+
+            img.onclick = function () {
+                count--
+                h2.textContent = `⤥ KLICKA PÅ FELET ${count} GÅNGER ⤦`
+                if (count == 0) {
+                    div.style.display = "none"
+                    img.style.display = "none"
+                    const loadImg = `url(https://i.gifer.com/8H7e.gif)`
+                    body.style.backgroundImage = loadImg
+                    setTimeout(() => {
+                        div.style.display = "flex"
+                        h1.textContent = "🥳 GRATTIS EINAR! 🥳"
+                        h2.textContent = "🎉 VISA DET HÄR FÖR NOAK OCH HAN KÖPER V-BUCKS TILL DIG 🎉"
+                        body.style.backgroundImage = `url('https://4.bp.blogspot.com/-TrI_0UQ98aI/VJ7SlqMVI5I/AAAAAAAAAC0/6q687o8gwUc/s1600/monkeys-wing-birthday.gif')`;
+                    }, 10000);
+                }
+            }
+            /*När man har klickat 100ggr -> räknar ner, så när man klickat en så står det 99ggr tex, 
+            ta fram ladd-skärm som aldrig tar slut :D 
+            https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952zvgomyl7w0srnxqpraiwcu95ujrfb9do6gx7yib9&ep=v1_gifs_search&rid=200w.gif&ct=g*/
         };    
     </script>
 </body>
