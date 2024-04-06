@@ -29,8 +29,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url("https://i.pinimg.com/736x/7f/d2/b4/7fd2b4e57b969a957f08ce2bc60e41bf.jpg");
-            background: url("https://4.bp.blogspot.com/-TrI_0UQ98aI/VJ7SlqMVI5I/AAAAAAAAAC0/6q687o8gwUc/s1600/monkeys-wing-birthday.gif");
             background: url("https://media0.giphy.com/media/GmWeN9bM2VCIlxoIfw/200w.gif?cid=6c09b952wxvdhi8g9uf56ripopvibik0leq5dwnw3j79jc4i&ep=v1_gifs_search&rid=200w.gif&ct=g");
             background-size: 100% 100%;
         }
@@ -90,6 +88,9 @@
     </main>
 
     <script>
+        const loadImg = new Image();
+        loadImg.src = "http://static.demilked.com/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-1.gif";
+
         document.querySelector("img").onclick = function () {
             const div = document.querySelector("div")
 
@@ -100,13 +101,20 @@
             img.id = "error";
 
             const body = document.querySelector("body");
-            body.style.backgroundImage = `url('https://i.pinimg.com/736x/7f/d2/b4/7fd2b4e57b969a957f08ce2bc60e41bf.jpg')`;
+            body.style.backgroundImage = `url(${loadImg.src})`
+            div.style.display = "none"
+            img.style.display = "none"
+            setTimeout(() => {
+                div.style.display = "flex"
+                img.style.display = "block"
+                body.style.backgroundImage = `url('https://i.pinimg.com/736x/7f/d2/b4/7fd2b4e57b969a957f08ce2bc60e41bf.jpg')`;
+            }, 7500);
 
             const h1 = document.querySelector("h1");
             h1.textContent = "😥 !!! NÅGOT GICK FEL !!! 😥"
             h1.style.fontSize = "5vw"
 
-            let count = 11;
+            let count = 111;
             const h2 = document.querySelector("h2");
             h2.textContent = `⤥ KLICKA PÅ FELET ${count} GÅNGER ⤦`
 
@@ -116,19 +124,15 @@
                 if (count == 0) {
                     div.style.display = "none"
                     img.style.display = "none"
-                    const loadImg = `url(./media/gif-animations-replace-loading-screen-1.gif)`
-                    body.style.backgroundImage = loadImg
+                    body.style.backgroundImage = `url(${loadImg.src})`
                     setTimeout(() => {
                         div.style.display = "flex"
                         h1.textContent = "🥳 GRATTIS EINAR! 🥳"
-                        h2.textContent = "🎉 VISA DET HÄR FÖR NOAK OCH HAN KÖPER V-BUCKS TILL DIG 🎉"
+                        h2.textContent = "🎉 VISA DET HÄR FÖR NOAK SÅ KÖPER HAN V-BUCKS TILL DIG 🎉"
                         body.style.backgroundImage = `url('https://4.bp.blogspot.com/-TrI_0UQ98aI/VJ7SlqMVI5I/AAAAAAAAAC0/6q687o8gwUc/s1600/monkeys-wing-birthday.gif')`;
-                    }, 15000);
+                    }, 8500);
                 }
             }
-            /*När man har klickat 100ggr -> räknar ner, så när man klickat en så står det 99ggr tex, 
-            ta fram ladd-skärm som aldrig tar slut :D 
-            https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952zvgomyl7w0srnxqpraiwcu95ujrfb9do6gx7yib9&ep=v1_gifs_search&rid=200w.gif&ct=g*/
         };    
     </script>
 </body>
