@@ -89,7 +89,9 @@
 
     <script>
         const loadImg = new Image();
-        loadImg.src = "http://static.demilked.com/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-1.gif";
+        loadImg.src = "./media/gif-animations-replace-loading-screen-1.gif";
+        const loadImgSuccess = new Image();
+        loadImgSuccess.src = "./media/gif-animations-replace-loading-screen-1-ezgif.com-cut.gif"
 
         document.querySelector("img").onclick = function () {
             const div = document.querySelector("div")
@@ -124,7 +126,7 @@
                 if (count == 0) {
                     div.style.display = "none"
                     img.style.display = "none"
-                    body.style.backgroundImage = `url(${loadImg.src})`
+                    body.style.backgroundImage = `url(${loadImgSuccess.src})`
                     setTimeout(() => {
                         div.style.display = "flex"
                         h1.textContent = "🥳 GRATTIS EINAR! 🥳"
